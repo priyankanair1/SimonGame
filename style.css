@@ -1,90 +1,111 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
+
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
 }
-  
+
 .container {
-    width: 30em;
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    border: 1px solid rgb(211, 166, 166);
+  width: 30em;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  border: 1px solid rgb(211, 166, 166);
 }
-  
+
 .heading {
-    font-size: 3em;
-    font-weight:bold;
-    letter-spacing: .5em;
-    text-align: center;
-    color: #bc7777;
-    padding: 1em;    
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: .5em;
+  text-align: center;
+  color: #bc7777;
+  padding: 1em;
 }
-  
+
+.level {
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: .5em;
+  text-align: center;
+  color: #ffffff;
+  padding: 1em;
+  margin-bottom: 10px;
+  flex-wrap: nowrap;
+}
+
 .start {
-    font-size: 2em;
-    font-weight:bold;
-    letter-spacing: .5em;
-    text-align: center;
-    padding: 1em;
-    margin: 30px;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: .5em;
+  text-align: center;
+  padding: 1em;
+  margin: 30px;
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
 }
 
 #red {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: red;
-    flex-wrap: wrap;
-    margin: 1px auto 10px;
-    border: 2px solid rgb(211, 166, 166);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: red;
+  flex-wrap: wrap;
+  margin: 1px auto 10px;
+  border: 2px solid rgb(211, 166, 166);
 }
-  
+
 #blue {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: blue;
-    flex-wrap: wrap;
-    margin: 1px auto 10px;
-    border: 2px solid rgb(211, 166, 166);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: blue;
+  flex-wrap: wrap;
+  margin: 1px auto 10px;
+  border: 2px solid rgb(211, 166, 166);
 }
 
 #yellow {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: yellow;
-    flex-wrap: wrap;
-    margin: 1px auto 10px;
-    border: 2px solid rgb(211, 166, 166);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: yellow;
+  flex-wrap: wrap;
+  margin: 1px auto 10px;
+  border: 2px solid rgb(211, 166, 166);
 }
 
 #green {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: green;
-    flex-wrap: wrap;
-    margin: 1px auto 10px;
-    border: 2px solid rgb(211, 166, 166);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: green;
+  flex-wrap: wrap;
+  margin: 1px auto 10px;
+  border: 2px solid rgb(211, 166, 166);
+}
+
+.blink {
+  animation: blinker .5s linear 1;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
