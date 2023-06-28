@@ -60,7 +60,7 @@ body {
   align-items: center;
 }
 
-#red {
+#color_0 {
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -70,7 +70,7 @@ body {
   border: 2px solid rgb(211, 166, 166);
 }
 
-#blue {
+#color_1 {
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -80,7 +80,7 @@ body {
   border: 2px solid rgb(211, 166, 166);
 }
 
-#yellow {
+#color_2 {
   height: 150px;
   width: 150px;
   border-radius: 50%;
@@ -90,7 +90,7 @@ body {
   border: 2px solid rgb(211, 166, 166);
 }
 
-#green {
+#color_3 {
   height: 150px;
   width: 150px;
   border-radius: 50%;

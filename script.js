@@ -1,19 +1,20 @@
 /*----- constants -----*/
 const Choices = {
-  '0': "red",
-  '1': "blue",
-  '2': "yellow",
-  '3': "green"
+  '0': "color_0",
+  '1': "color_1",
+  '2': "color_2",
+  '3': "color_3"
 }
 /*----- state variables -----*/
 let round;
-
+let blinkedColors = [];
+let clickCount;
 /*----- cached elements  -----*/
 const startButton = document.getElementById('start')
-const redEl = document.getElementById('red');
-const greenEl = document.getElementById('green');
-const yellowEl = document.getElementById('yellow');
-const blueEl = document.getElementById('blue');
+const redEl = document.getElementById('color_0');
+const blueEl = document.getElementById('color_1');
+const yellowEl = document.getElementById('color_2');
+const greenEl = document.getElementById('color_3');
 /*----- event listeners -----*/
 startButton.addEventListener('click', startGame);
 redEl.addEventListener('click', handleClick);
@@ -28,16 +29,18 @@ init();
 function init() {
   // initialize round = 1
   round = 1;
+  clickCount = 0;
   document.getElementById("level").innerHTML = round;
   console.log("Init called !");
 }
 
-function getNextTurn() {
-  return Math.floor(Math.random() * 4);
+function getNextColor() {
+  let color = Math.floor(Math.random() * 4);
+  blinkedColors.push(color);
+  return color;
 }
 
 function clearBlink(id) {
-  console.log('yes');
   document.getElementById(id).classList.remove("blink");
 }
 
@@ -49,12 +52,20 @@ function blink(id) {
 function startGame() {
   console.log("Game started !");
   document.getElementById("start").disabled = true;
-  let turn = getNextTurn();
-  console.log(turn);
-  blink(Choices[turn]);
+  let color = getNextColor();
+  blink(Choices[color]);
 }
 
 function handleClick(evt) {
   target = evt.target;
-  console.log(target.id);
+  let index = document.getElementById(evt.target.id).id.slice(6);
+  console.log(index);
+  console.log(blinkedColors[clickCount]);
+  if(index == blinkedColors[clickCount]) {
+    clickCount++;
+    let color = getNextColor();
+    blink(Choices[color]);
+  } else {
+    console.log("Fail....");  
+  }
 }
