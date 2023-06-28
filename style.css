@@ -28,7 +28,7 @@ body {
   letter-spacing: .5em;
   text-align: center;
   color: #bc7777;
-  padding: 1em;
+  padding: 0em;
 }
 
 .level {
@@ -61,43 +61,39 @@ body {
 }
 
 #color_0 {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+	border-radius:100% 0 0 0;
   background-color: red;
-  flex-wrap: wrap;
-  margin: 1px auto 10px;
-  border: 2px solid rgb(211, 166, 166);
+  margin: 10px auto;
+  border: 10px solid rgb(211, 166, 166);
 }
 
 #color_1 {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+	border-radius:0 100% 0 0;
   background-color: blue;
-  flex-wrap: wrap;
-  margin: 1px auto 10px;
-  border: 2px solid rgb(211, 166, 166);
+  margin: 10px auto;
+  border: 10px solid rgb(211, 166, 166);
 }
 
 #color_2 {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+	border-radius:0% 0% 0% 100%;
   background-color: yellow;
-  flex-wrap: wrap;
-  margin: 1px auto 10px;
-  border: 2px solid rgb(211, 166, 166);
-}
+  margin: 10px auto;
+  border: 10px solid rgb(211, 166, 166);
+  }
 
 #color_3 {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+	border-radius:0 0 100% 0;
   background-color: green;
-  flex-wrap: wrap;
-  margin: 1px auto 10px;
-  border: 2px solid rgb(211, 166, 166);
+  margin: 10px auto;
+  border: 10px solid rgb(211, 166, 166);
 }
 
 .blink {

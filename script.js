@@ -6,9 +6,13 @@ const Choices = {
   '3': "color_3"
 }
 /*----- state variables -----*/
-let round;
-let blinkedColors = [];
+let level;
+let started;
+let blinkedColors;
 let clickCount;
+let blinkCount;
+let accurateClick;
+let intervalId;
 /*----- cached elements  -----*/
 const startButton = document.getElementById('start')
 const redEl = document.getElementById('color_0');
@@ -27,16 +31,30 @@ blueEl.addEventListener('click', handleClick);
 init();
 
 function init() {
-  // initialize round = 1
-  round = 1;
+  level = 1;
+  started = false;
+  blinkedColors = [];
   clickCount = 0;
-  document.getElementById("level").innerHTML = round;
-  console.log("Init called !");
+  accurateClick = false;
+  blinkCount=0;
+  intervalId = null;
+  render();
+}
+
+function render() {
+  document.getElementById("start").disabled = false;
+  setLevel(level);
+}
+
+function setLevel() {
+  document.getElementById("level").innerHTML = level;
 }
 
 function getNextColor() {
   let color = Math.floor(Math.random() * 4);
+  console.log("Color index : " + color);
   blinkedColors.push(color);
+  blink(Choices[color]);
   return color;
 }
 
@@ -46,26 +64,48 @@ function clearBlink(id) {
 
 function blink(id) {
   document.getElementById(id).classList.add("blink");
+  blinkCount++;
+  if(blinkCount == level && intervalId != null)  {
+    clearInterval(intervalId);
+  }   
   setTimeout(clearBlink, 500, id);
 }
 
 function startGame() {
   console.log("Game started !");
+  started = true;
   document.getElementById("start").disabled = true;
-  let color = getNextColor();
-  blink(Choices[color]);
+  getNextColor();
 }
 
 function handleClick(evt) {
-  target = evt.target;
-  let index = document.getElementById(evt.target.id).id.slice(6);
-  console.log(index);
-  console.log(blinkedColors[clickCount]);
-  if(index == blinkedColors[clickCount]) {
+  if(started) {
+    console.log("-------------------------------------");
+    target = evt.target;
+    let index = document.getElementById(evt.target.id).id.slice(6);
+    console.log("Clicked index : " + index);
+
+    if(index == blinkedColors[clickCount]) {
+      accurateClick = true;
+    } else {
+      console.log("fail...");
+      init();
+      return;
+      //http://codeskulptor-demos.commondatastorage.googleapis.com/descent/bomb.mp3
+    }
+    console.log("accurateClick : " + accurateClick);
     clickCount++;
-    let color = getNextColor();
-    blink(Choices[color]);
-  } else {
-    console.log("Fail....");  
+    console.log("clickCount : " + clickCount);
+    console.log("level : " + level);
+    if(clickCount == level) {
+      console.log("Finish level : " + level);
+      blinkedColors = [];
+      clickCount = 0;
+      blinkCount = 0;
+      intervalId = setInterval(getNextColor, 1000);
+      level++;
+      setLevel(level);
+      console.log("Next level : " + level);
+    }
   }
 }
