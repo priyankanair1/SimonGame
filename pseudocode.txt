@@ -1,0 +1,20 @@
+Simon Game - Pseudocode
+1. Define required variables
+	1.1 Declare constant for 4 colors	
+	1.2 Declare ‘level’ to store the play level.
+	1.3 Declare array to store the color which blinked
+	1.4 Declare playerClick to store the color player clicked
+2. Upon start button click app should:
+	2.1 Initialize level = 1
+	2.2 Get a random number between 0 to 3 and blink that specific color
+	2.3 If player failed to click on same color stop the game.
+	2.4 If player click on same color, Player wins and increase level
+3. Next Levels
+	3.1 One each next level color has to blink up to ‘level’ times
+	3.2 Get random number each time to decide which color to blink.
+	3.3 Define timeout to decide blink duration
+	3.4 Store blinked colors in array
+4. Player click
+	4.1 Compare player clicked with values in array sequentially. 
+	4.2 Pass if player clicked each color sequentially
+	4.3 Fail if player clicked the color which is not in array at specific index
