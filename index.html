@@ -2,29 +2,41 @@
 <html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" id="container">
     <div class="heading">
       SIMON
     </div>
-    <div class="level">
-      LEVEL
-      <div id="level" class="level"></div>
-    </div>
+    <div id="message" class="message"></div>
     <div class="parent">
-      <div id="color_0"></div>
-      <div id="color_1"></div>
-      <div id="color_2"></div>
-      <div id="color_3"></div>
+      <button class="color" id="color_0"></button>
+      <button class="color" id="color_1"></button>
+      <button class="color" id="color_2"></button>
+      <button class="color" id="color_3"></button>
+    </div>
+    <div class="scores">
+      <div id="score">
+        Score: 0
+      </div>
+      <div id="highscore">
+        High Score: 0      
+      </div>
     </div>
     <div>
-      <button class="w3-button w3-circle w3-white start" id="start">START</button>
+      <button class="color start" id="start">START</button>
     </div>
+    <audio id="audio_0" src="audio/button-8-88355.mp3"></audio>
+    <audio id="audio_1" src="audio/click-menu-app-147357.mp3"></audio>
+    <audio id="audio_2" src="audio/select-sound-121244.mp3"></audio>
+    <audio id="audio_3" src="audio/select_denied_04-96602.mp3"></audio>
+    <audio id="audio_fail" src="audio/error-2-36058.mp3"></audio>
+
   </div>
 </body>
 
