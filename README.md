@@ -19,7 +19,6 @@ Technologies:
 
 Getting Started:
 
-
 *Follow the instructions on the board!
 
-Next Steps: For future enhancements, planning to add different modes to play like - easy,medium,hard ,also adding 2 more choices of color would make it harder for the user to rememeber each colour in order.
+Next Steps: For future enhancements will be adding different modes to play like - easy,medium,hard. Add 2 more choices of color to add complexity of game.
