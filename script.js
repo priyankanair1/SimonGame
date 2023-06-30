@@ -59,7 +59,7 @@ function init() {
   accurateClick = false;
   blinkCount=0;
   intervalId = null;
-  playerTurn = false;
+  playerTurn = true;
   score = 0
   highScore = 0
   failed = false;
@@ -120,6 +120,7 @@ function blink(id) {
   blinkCount++;
   if(blinkCount == level && intervalId != null)  {
     clearInterval(intervalId);
+    playerTurn = true;
     showMessage(messages["play"]);
   }   
   setTimeout(clearBlink, 500, id);
@@ -146,7 +147,7 @@ function loseGame() {
 }
 
 function handleClick(evt) {
-  if(started) {
+  if(started && playerTurn) {
     target = evt.target;
     let index = document.getElementById(evt.target.id).id.slice(6);
     playAudio(index);
@@ -160,7 +161,8 @@ function handleClick(evt) {
     if(clickCount == level) {
       blinkedColors = [];
       clickCount = 0;
-      blinkCount = 0;      
+      blinkCount = 0;
+      playerTurn = false;
       intervalId = setInterval(getNextColor, 1000);
       level++;
       score++;
