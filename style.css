@@ -67,7 +67,7 @@ body {
 #color_1 {
   height: 200px;
   width: 200px;
-	border-radius:0 100% 0 0;
+  border-radius:0 100% 0 0;
   background-color: blue;
 }
 
@@ -112,7 +112,6 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-
 
 .blink {
   animation: blinker .5s linear 1;

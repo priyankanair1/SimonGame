@@ -6,10 +6,10 @@ Simon is an electronic game of short-term memory skill invented by Ralph H. Baer
 The device has four colored buttons, each producing a particular tone when it is pressed or activated by the device. A round in the game consists of the device lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.
 
 Screenshots: 
-![Simon Start](screenhots/Simon_Start.png)
-![Simon Computer's Turn](screenhots/Simon_ComputerTurn.png)
-![Simon Player's Turn](screenhots/Simon_PlayerTurn.png)
-![Simon Fail](screenhots/Simon_Fail.png)
+![Simon Start](screenshots/Simon_Start.png)
+![Simon Computer's Turn](screenshots/Simon_ComputerTurn.png)
+![Simon Player's Turn](screenshots/Simon_PlayerTurn.png)
+![Simon Fail](screenshots/Simon_Fail.png)
 
 Technologies:
 1 HTML - For the front end elements and design of the game.
@@ -18,7 +18,7 @@ Technologies:
 3 javascript - For implementing core logic of the game.
 
 Getting Started:
-
+https://priyankanair1.github.io/SimonGame/
 *Follow the instructions on the board!
 
 Next Steps: For future enhancements will be adding different modes to play like - easy,medium,hard. Add 2 more choices of color to add complexity of game.
